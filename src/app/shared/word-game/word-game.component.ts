@@ -16,7 +16,7 @@ export class WordGameComponent {
   winMessage = input.required<string>();
   readonly alphabet = ALPHABET;
   readonly maxWrong = MAX_WRONG;
-  showHelp = signal(false);
+  showHelp = signal(false); 
 
   isCorrect(letter: string): boolean {
     return this.service.guessedLetters().has(letter) && this.service.word().includes(letter);
