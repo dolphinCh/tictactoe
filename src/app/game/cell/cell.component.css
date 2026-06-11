@@ -1,0 +1,30 @@
+.cell {
+  width: 100%;
+  aspect-ratio: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  color: transparent;
+}
+
+.cell:hover:not(:disabled) {
+  background: var(--cell-hover);
+  border-color: var(--border-hover);
+  transform: scale(1.04);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell.x {
+  color: var(--x-color);
+}
+
+.cell.o {
+  color: var(--o-color);
+}

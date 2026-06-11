@@ -1,0 +1,203 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1rem 2rem;
+  min-height: calc(100vh - 52px);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+/* ── Game area: hangman + right panel side-by-side ── */
+.game-area {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  min-width: 220px;
+}
+
+/* ── Word display ── */
+.word-display {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.letter-slot {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 2rem;
+  height: 2.5rem;
+  border-bottom: 2.5px solid var(--border-hover);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.letter-slot.revealed {
+  color: var(--x-color);
+}
+
+/* ── Info texts ── */
+.category {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.wrong-info {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.wrong-info .danger {
+  color: var(--o-color);
+  font-weight: 700;
+}
+
+.status {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.status.won  { color: var(--win-color); }
+.status.lost { color: var(--o-color); }
+
+/* ── Action buttons ── */
+.actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.action-btn {
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.action-btn:hover:not(:disabled) {
+  background: var(--cell-hover);
+  color: var(--text);
+  border-color: var(--border-hover);
+}
+
+.action-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.action-btn.hint {
+  color: var(--btn-bg);
+  border-color: var(--btn-bg);
+}
+
+.help-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 260px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.help-box p { margin: 0; }
+
+/* ── Keyboard ── */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 5px;
+  width: min(400px, 96vw);
+}
+
+.key {
+  width: 100%;
+  aspect-ratio: 1;
+  font-size: clamp(0.7rem, 3.5vw, 0.95rem);
+  font-weight: 700;
+  background: var(--surface);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, transform 0.1s, color 0.12s, opacity 0.12s;
+}
+
+.key:hover:not(:disabled) {
+  background: var(--cell-hover);
+  border-color: var(--border-hover);
+  transform: scale(1.08);
+}
+
+.key:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.key.correct {
+  background: transparent;
+  color: var(--x-color);
+  border-color: var(--x-color);
+  opacity: 1;
+}
+
+.key.wrong {
+  background: transparent;
+  color: var(--o-color);
+  border-color: var(--o-color);
+  opacity: 1;
+}
+
+/* ── New game button ── */
+.new-game-btn {
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  letter-spacing: 0.03em;
+}
+
+.new-game-btn:hover {
+  background: var(--btn-hover);
+  transform: scale(1.03);
+}
+
+.new-game-btn:active {
+  transform: scale(0.98);
+}

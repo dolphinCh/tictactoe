@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="title">Тик-так-тое</h1>
+
+  <div class="scoreboard">
+    <div class="score" [class.active]="game.currentPlayer() === 'X' && !game.gameOver()">
+      <input
+        class="name-input x"
+        type="text"
+        maxlength="16"
+        placeholder="Player X"
+        [ngModel]="game.playerNames().X"
+        (ngModelChange)="game.setName('X', $event)"
+      />
+      <span class="score-value">{{ game.scores().X }}</span>
+    </div>
+    <div class="divider">vs</div>
+    <div class="score" [class.active]="game.currentPlayer() === 'O' && !game.gameOver()">
+      <input
+        class="name-input o"
+        type="text"
+        maxlength="16"
+        placeholder="Player O"
+        [ngModel]="game.playerNames().O"
+        (ngModelChange)="game.setName('O', $event)"
+      />
+      <span class="score-value">{{ game.scores().O }}</span>
+    </div>
+  </div>
+
+  <p class="status" [class.winner]="game.winner() !== null">{{ statusMessage }}</p>
+
+  <div class="board">
+    @for (cell of game.board(); track $index) {
+      <app-cell
+        [value]="cell"
+        [disabled]="game.gameOver()"
+        (cellClick)="game.makeMove($index)"
+      />
+    }
+  </div>
+
+  <button class="new-game-btn" (click)="game.newGame()">New Game</button>
+</div>

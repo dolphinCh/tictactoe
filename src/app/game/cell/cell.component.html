@@ -1,0 +1,9 @@
+<button
+  class="cell"
+  [class.x]="value() === 'X'"
+  [class.o]="value() === 'O'"
+  [disabled]="disabled() || value() !== null"
+  (click)="cellClick.emit()"
+>
+  {{ value() }}
+</button>

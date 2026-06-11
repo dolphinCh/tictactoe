@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  min-height: calc(100vh - 52px);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  margin: 0;
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--surface);
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.score.active {
+  opacity: 1;
+}
+
+.name-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  width: 90px;
+  outline: none;
+  transition: border-color 0.2s;
+  padding: 0 0 2px;
+}
+
+.name-input::placeholder {
+  opacity: 0.45;
+}
+
+.name-input:focus {
+  border-bottom-color: currentColor;
+}
+
+.name-input.x { color: var(--x-color); }
+.name-input.o { color: var(--o-color); }
+
+.score-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.divider {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0;
+  min-height: 1.5rem;
+  transition: color 0.2s;
+}
+
+.status.winner {
+  color: var(--win-color);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: min(360px, 90vw);
+}
+
+.new-game-btn {
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  letter-spacing: 0.03em;
+}
+
+.new-game-btn:hover {
+  background: var(--btn-hover);
+  transform: scale(1.03);
+}
+
+.new-game-btn:active {
+  transform: scale(0.98);
+}
