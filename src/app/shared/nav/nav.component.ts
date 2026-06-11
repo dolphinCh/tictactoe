@@ -1,4 +1,4 @@
-import { Component, signal, inject, HostListener } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, inject, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../theme/theme.service';
 
@@ -7,6 +7,7 @@ import { ThemeService } from '../../theme/theme.service';
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavComponent {
   theme = inject(ThemeService);

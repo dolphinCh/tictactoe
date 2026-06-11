@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <p class="status" [class.winner]="game.winner() !== null">{{ statusMessage }}</p>
+  <p class="status" [class.winner]="game.winner() !== null">{{ statusMessage() }}</p>
 
   <div class="board">
     @for (cell of game.board(); track $index) {

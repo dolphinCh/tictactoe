@@ -6,7 +6,6 @@ export type Theme = 'dark' | 'pink';
 export class ThemeService {
   private theme = signal<Theme>('dark');
 
-  readonly current = computed(() => this.theme());
   readonly isDark = computed(() => this.theme() === 'dark');
 
   constructor() {

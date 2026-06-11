@@ -1,11 +1,4 @@
-export const MAX_WRONG = 6;
-export const MAX_HINTS = 2;
-
-export interface WordEntry {
-  word: string;
-  hint: string;
-  category: string;
-}
+import { WordEntry } from '../shared/word-game/word-game.models';
 
 export const GEO_WORDS: WordEntry[] = [
   // ── Градови ──────────────────────────────────────────────────────────────

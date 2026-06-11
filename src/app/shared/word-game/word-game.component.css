@@ -15,7 +15,6 @@
   letter-spacing: 0.05em;
 }
 
-/* ── Game area: hangman + right panel side-by-side ── */
 .game-area {
   display: flex;
   align-items: flex-start;
@@ -32,7 +31,6 @@
   min-width: 220px;
 }
 
-/* ── Word display ── */
 .word-display {
   display: flex;
   gap: 0.5rem;
@@ -54,10 +52,9 @@
 }
 
 .letter-slot.revealed {
-  color: var(--x-color);
+  color: var(--word-game-accent, var(--x-color));
 }
 
-/* ── Info texts ── */
 .category {
   font-size: 0.9rem;
   color: var(--text-muted);
@@ -85,7 +82,6 @@
 .status.won  { color: var(--win-color); }
 .status.lost { color: var(--o-color); }
 
-/* ── Action buttons ── */
 .actions {
   display: flex;
   gap: 0.6rem;
@@ -133,7 +129,6 @@
 
 .help-box p { margin: 0; }
 
-/* ── Keyboard ── */
 .keyboard {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -167,8 +162,8 @@
 
 .key.correct {
   background: transparent;
-  color: var(--x-color);
-  border-color: var(--x-color);
+  color: var(--word-game-accent, var(--x-color));
+  border-color: var(--word-game-accent, var(--x-color));
   opacity: 1;
 }
 
@@ -179,7 +174,6 @@
   opacity: 1;
 }
 
-/* ── New game button ── */
 .new-game-btn {
   padding: 0.75rem 2.5rem;
   font-size: 1rem;

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="title">Бесилка</h1>
+  <h1 class="title">{{ title() }}</h1>
 
   <div class="game-area">
     <app-hangman [wrongCount]="service.wrongCount()" />
@@ -22,7 +22,7 @@
       }
 
       @if (service.isWon()) {
-        <p class="status won">Браво! Го погоди зборот! 🎉</p>
+        <p class="status won">{{ winMessage() }}</p>
       }
       @if (service.isLost()) {
         <p class="status lost">

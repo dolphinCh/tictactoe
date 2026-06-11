@@ -1,13 +1,6 @@
-export const MAX_WRONG = 6;
-export const MAX_HINTS = 2;
+import { WordEntry } from '../shared/word-game/word-game.models';
 
-export interface WordEntry {
-  word: string;
-  hint: string;
-  category: string;
-}
-
-export const WORDS: WordEntry[] = [
+export const BESILKA_WORDS: WordEntry[] = [
   { word: 'МАЧКА',     hint: 'Домашна миленичка која мјаука',          category: 'Животни'  },
   { word: 'КУЧЕ',      hint: 'Верен домашен миленик',                   category: 'Животни'  },
   { word: 'КОЊ',       hint: 'Голема животна за јавање',                category: 'Животни'  },

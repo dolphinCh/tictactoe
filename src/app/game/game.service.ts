@@ -34,7 +34,7 @@ export class GameService {
   readonly winner = computed(() => this.state().winner);
   readonly gameOver = computed(() => this.state().gameOver);
   readonly scores = computed(() => this.state().scores);
-  readonly playerNames = computed(() => this.names());
+  readonly playerNames = this.names.asReadonly();
 
   displayName(player: Player): string {
     return this.names()[player].trim() || `Player ${player}`;

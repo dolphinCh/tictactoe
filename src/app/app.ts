@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './shared/nav/nav.component';
 
@@ -9,5 +9,6 @@ import { NavComponent } from './shared/nav/nav.component';
     <app-nav />
     <router-outlet />
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {}
