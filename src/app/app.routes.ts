@@ -18,4 +18,8 @@ export const routes: Routes = [
     path: 'matematika',
     loadComponent: () => import('./matematika/matematika.component').then(m => m.MatematikaComponent),
   },
+  {
+    path: 'gatanki',
+    loadComponent: () => import('./gatanki/gatanki.component').then(m => m.GatankiComponent),
+  },
 ];
