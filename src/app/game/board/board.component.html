@@ -7,7 +7,7 @@
         class="name-input x"
         type="text"
         maxlength="16"
-        placeholder="Player X"
+        placeholder="Играч X"
         [ngModel]="game.playerNames().X"
         (ngModelChange)="game.setName('X', $event)"
       />
@@ -19,7 +19,7 @@
         class="name-input o"
         type="text"
         maxlength="16"
-        placeholder="Player O"
+        placeholder="Играч O"
         [ngModel]="game.playerNames().O"
         (ngModelChange)="game.setName('O', $event)"
       />
@@ -39,5 +39,5 @@
     }
   </div>
 
-  <button class="new-game-btn" (click)="game.newGame()">New Game</button>
+  <button class="new-game-btn" (click)="game.newGame()">Нова игра</button>
 </div>

@@ -15,8 +15,8 @@ export class BoardComponent {
 
   readonly statusMessage = computed(() => {
     const winner = this.game.winner();
-    if (winner === 'draw') return "It's a draw!";
-    if (winner) return `${this.game.displayName(winner)} wins!`;
-    return `${this.game.displayName(this.game.currentPlayer())}'s turn`;
+    if (winner === 'draw') return 'Нерешено!';
+    if (winner) return `${this.game.displayName(winner)} победи!`;
+    return `Ред на ${this.game.displayName(this.game.currentPlayer())}`;
   });
 }
