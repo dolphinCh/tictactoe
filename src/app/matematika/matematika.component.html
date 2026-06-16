@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="title">Математика</h1>
+  <p class="subtitle">Множење и делење</p>
+
+  <div class="score">
+    <span class="score-label">Резултат:</span>
+    <span class="score-value">{{ game.correct() }} / {{ game.total() }}</span>
+  </div>
+
+  <div class="question">{{ game.question().display }}</div>
+
+  <div class="choices">
+    @for (choice of game.question().choices; track choice) {
+      <button
+        class="choice-btn"
+        [class]="choiceClass(choice)"
+        [disabled]="game.answered()"
+        (click)="game.answer(choice)">
+        {{ choice }}
+      </button>
+    }
+  </div>
+
+  @if (game.answered()) {
+    <div class="feedback" [class.feedback-correct]="game.isCorrect()" [class.feedback-wrong]="!game.isCorrect()">
+      {{ game.isCorrect() ? 'Точно! ✓' : 'Неточно! ✗' }}
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" (click)="game.nextQuestion()">Следно прашање</button>
+      <button class="btn btn-secondary" (click)="game.newGame()">Нова игра</button>
+    </div>
+  } @else {
+    <div class="actions">
+      <button class="btn btn-secondary" (click)="game.newGame()">Нова игра</button>
+    </div>
+  }
+</div>

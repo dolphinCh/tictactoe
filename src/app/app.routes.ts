@@ -14,4 +14,8 @@ export const routes: Routes = [
     path: 'geografija',
     loadComponent: () => import('./geografija/geografija.component').then(m => m.GeografijaComponent),
   },
+  {
+    path: 'matematika',
+    loadComponent: () => import('./matematika/matematika.component').then(m => m.MatematikaComponent),
+  },
 ];
