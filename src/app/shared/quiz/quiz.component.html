@@ -1,13 +1,17 @@
 <div class="container">
-  <h1 class="title">Гатанки</h1>
-  <p class="subtitle">Позна ја гатанката</p>
+  <h1 class="title">{{ title }}</h1>
+  <p class="subtitle">{{ subtitle }}</p>
 
   <div class="score">
     <span class="score-label">Резултат:</span>
     <span class="score-value">{{ game.correct() }} / {{ game.total() }}</span>
   </div>
 
-  <div class="riddle">{{ game.gatanka().riddle }}</div>
+  @if (game.question().colorHex) {
+    <div class="color-swatch" [style.background]="game.question().colorHex"></div>
+  } @else {
+    <div class="question">{{ game.question().question }}</div>
+  }
 
   <div class="choices">
     @for (choice of game.choices(); track choice) {
@@ -26,12 +30,11 @@
       @if (game.isCorrect()) {
         Точно! ✓
       } @else {
-        Неточно! ✗ — Точниот одговор е: <strong>{{ game.gatanka().answer }}</strong>
+        Неточно! ✗ — Точниот одговор е: <strong>{{ game.question().answer }}</strong>
       }
     </div>
-
     <div class="actions">
-      <button class="btn btn-primary" (click)="game.next()">Следна гатанка</button>
+      <button class="btn btn-primary" (click)="game.next()">Следно прашање</button>
       <button class="btn btn-secondary" (click)="game.newGame()">Нова игра</button>
     </div>
   } @else {

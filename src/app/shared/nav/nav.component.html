@@ -7,36 +7,18 @@
     @if (menuOpen()) {
       <div class="backdrop" (click)="menuOpen.set(false)"></div>
       <div class="dropdown">
-        <a class="dropdown-item"
-           routerLink="/tictactoe"
-           routerLinkActive="active"
-           (click)="menuOpen.set(false)">
-          Тик-так-тое
-        </a>
-        <a class="dropdown-item"
-           routerLink="/besilka"
-           routerLinkActive="active"
-           (click)="menuOpen.set(false)">
-          Бесилка
-        </a>
-        <a class="dropdown-item"
-           routerLink="/geografija"
-           routerLinkActive="active"
-           (click)="menuOpen.set(false)">
-          Брза географија
-        </a>
-        <a class="dropdown-item"
-           routerLink="/matematika"
-           routerLinkActive="active"
-           (click)="menuOpen.set(false)">
-          Математика
-        </a>
-        <a class="dropdown-item"
-           routerLink="/gatanki"
-           routerLinkActive="active"
-           (click)="menuOpen.set(false)">
-          Гатанки
-        </a>
+        <a class="dropdown-item" routerLink="/tictactoe"   routerLinkActive="active" (click)="menuOpen.set(false)">Тик-так-тое</a>
+        <a class="dropdown-item" routerLink="/besilka"     routerLinkActive="active" (click)="menuOpen.set(false)">Бесилка</a>
+        <a class="dropdown-item" routerLink="/geografija"  routerLinkActive="active" (click)="menuOpen.set(false)">Брза географија</a>
+        <a class="dropdown-item" routerLink="/matematika"  routerLinkActive="active" (click)="menuOpen.set(false)">Математика</a>
+        <a class="dropdown-item" routerLink="/smetanje"    routerLinkActive="active" (click)="menuOpen.set(false)">Сметање</a>
+        <a class="dropdown-item" routerLink="/gatanki"     routerLinkActive="active" (click)="menuOpen.set(false)">Гатанки</a>
+        <a class="dropdown-item" routerLink="/zivotni"     routerLinkActive="active" (click)="menuOpen.set(false)">Животни</a>
+        <a class="dropdown-item" routerLink="/prestolnini" routerLinkActive="active" (click)="menuOpen.set(false)">Престолнини</a>
+        <a class="dropdown-item" routerLink="/antonimi"    routerLinkActive="active" (click)="menuOpen.set(false)">Антоними</a>
+        <a class="dropdown-item" routerLink="/boi"         routerLinkActive="active" (click)="menuOpen.set(false)">Бои</a>
+        <a class="dropdown-item" routerLink="/azbuka"      routerLinkActive="active" (click)="menuOpen.set(false)">Азбука</a>
+        <a class="dropdown-item" routerLink="/opstini"     routerLinkActive="active" (click)="menuOpen.set(false)">Општина</a>
       </div>
     }
   </div>

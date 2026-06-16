@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { QuizComponent } from '../shared/quiz/quiz.component';
 import { QuizService } from '../shared/quiz/quiz.service';
-import { GatankiService } from './gatanki.service';
+import { BoiService } from './boi.service';
 
 @Component({
-  selector: 'app-gatanki',
+  selector: 'app-boi',
   imports: [QuizComponent],
-  template: `<app-quiz title="Гатанки" subtitle="Позна ја гатанката" />`,
-  providers: [{ provide: QuizService, useClass: GatankiService }],
+  template: `<app-quiz title="Бои" subtitle="Која боја е ова?" />`,
+  providers: [{ provide: QuizService, useClass: BoiService }],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GatankiComponent {}
+export class BoiComponent {}
